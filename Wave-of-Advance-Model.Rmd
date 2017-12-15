@@ -1,0 +1,93 @@
+---
+title: "Wave-of-Advance-Model"
+author: "Andrew Mark"
+date: "December 15, 2017"
+output: html_document
+---
+
+```{r}
+library(curl)
+library(knitr)
+library(ggmap)
+library(ggplot2)
+```
+
+
+
+```{r}
+f <- curl("https://raw.githubusercontent.com/andym5780/Wave-of-Advance-Model-for-Predicting-the-Spread-of-Prismatic-Blade/master/Combined-dataset.csv")
+blade.database <- read.csv(f, header = TRUE)
+head(blade.database)
+```
+
+```{r}
+long <- blade.database$Longitude..DD.
+lati <- blade.database$Latitude..DD.
+```
+
+
+
+```{r}
+size <- make_bbox(lon = long, lat = lati, f = .2)
+size
+```
+
+
+```{r}
+sq_map <- get_map(location = size, maptype = "satellite", source = "google")
+```
+
+
+```{r}
+ggmap(sq_map) + geom_point(data = blade.database, mapping = aes(x = long, y = lati))
+```
+
+
+```{r}
+myMap <- get_map(location = c(lon = -93.5,lat = 17), source = "google", maptype = "terrain", color = "bw", crop=TRUE, zoom = 5)
+ggmap(myMap) + geom_point(aes(x = long, y = lati, color = "black"), data = blade.database, size = 3) + xlim(-100,-87) + ylim(14,20)
+```
+
+```{r}
+myMap <- get_map(location = c(lon = -93.5,lat = 17), source = "google", maptype = "terrain", color = "bw", crop=TRUE, zoom = 5)
+```
+
+```{r}
+map <- ggmap(myMap) + geom_point(aes(x = long, y = lati, size = blade.database$Total.Blade, color = blade.database$Total.Blade), data = blade.database) + xlim(-100,-87) + ylim(14,20) + guides(fill=FALSE)
+map
+```
+
+```{r}
+newmap <- map + theme(legend.position="none")
+newmap
+```
+the relative size and color ledgent was too big when I first did this so I had to take the legend out. This is jsut one example of the maps R and make
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
