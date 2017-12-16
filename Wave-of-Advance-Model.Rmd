@@ -63,22 +63,237 @@ newmap
 ```
 the relative size and color ledgent was too big when I first did this so I had to take the legend out. This is jsut one example of the maps R and make
 
+#Before 8500
+```{r}
+f <- curl("https://raw.githubusercontent.com/andym5780/Wave-of-Advance-Model-for-Predicting-the-Spread-of-Prismatic-Blade/master/Dates-Divided/Before%208500%20BP.csv")
+Before8500BP <- read.csv(f, header = TRUE)
+head(Before8500BP)
+```
 
+```{r}
+long <- Before8500BP$Longitude..DD.
+lati <- Before8500BP$Latitude..DD.
+```
 
+```{r}
+myMap <- get_map(location = c(lon = -93.5,lat = 17), source = "google", maptype = "terrain", color = "bw", crop=TRUE, zoom = 5)
+```
 
+```{r}
+map <- ggmap(myMap) + geom_point(aes(x = long, y = lati, size = 1, color = Before8500BP$Blade.Ratio..Total.Blades.Total.Obsidian.), data = Before8500BP) + xlim(-100,-87) + ylim(14,20) + guides(fill=FALSE)
+map
+```
+```{r}
+newmap <- map + theme(legend.position="none")
+newmap
+```
+#8500-6800
+```{r}
+f <- curl("https://raw.githubusercontent.com/andym5780/Wave-of-Advance-Model-for-Predicting-the-Spread-of-Prismatic-Blade/master/Dates-Divided/8500-6800%20BP.csv")
+From8500to6800BP <- read.csv(f, header = TRUE)
+head(From8500to6800BP)
+```
 
+```{r}
+long <- From8500to6800BP$Longitude..DD.
+lati <- From8500to6800BP$Latitude..DD.
+```
 
+```{r}
+myMap <- get_map(location = c(lon = -93.5,lat = 17), source = "google", maptype = "terrain", color = "bw", crop=TRUE, zoom = 5)
+```
 
+```{r}
+map <- ggmap(myMap) + geom_point(aes(x = long, y = lati, size = 1, color = From8500to6800BP$Blade.Ratio..Total.Blades.Total.Obsidian.), data = From8500to6800BP) + xlim(-100,-87) + ylim(14,20) + guides(fill=FALSE)
+map
+```
 
+```{r}
+newmap <- map + theme(legend.position="none")
+newmap
+```
 
+#6800-5500
+```{r}
+f <- curl("https://raw.githubusercontent.com/andym5780/Wave-of-Advance-Model-for-Predicting-the-Spread-of-Prismatic-Blade/master/Dates-Divided/6800-5500%20BP.csv")
+From6800to5500BP <- read.csv(f, header = TRUE)
+head(From6800to5500BP)
+```
 
+```{r}
+long <- From6800to5500BP$Longitude..DD.
+lati <- From6800to5500BP$Latitude..DD.
+```
 
+```{r}
+myMap <- get_map(location = c(lon = -93.5,lat = 17), source = "google", maptype = "terrain", color = "bw", crop=TRUE, zoom = 5)
+```
 
+```{r}
+map <- ggmap(myMap) + geom_point(aes(x = long, y = lati, size = 1, color = From6800to5500BP$Blade.Ratio..Total.Blades.Total.Obsidian.), data = From6800to5500BP) + xlim(-100,-87) + ylim(14,20) + guides(fill=FALSE)
+map
+```
 
+```{r}
+newmap <- map + theme(legend.position="none")
+newmap
+```
+#5500-4300
+```{r}
+f <- curl("https://raw.githubusercontent.com/andym5780/Wave-of-Advance-Model-for-Predicting-the-Spread-of-Prismatic-Blade/master/Dates-Divided/5500-4300%20BP.csv")
+From5500to4300BP <- read.csv(f, header = TRUE)
+head(From5500to4300BP)
+```
 
+```{r}
+long <- From5500to4300BP$Longitude..DD.
+lati <- From5500to4300BP$Latitude..DD.
+```
 
+```{r}
+myMap <- get_map(location = c(lon = -93.5,lat = 17), source = "google", maptype = "terrain", color = "bw", crop=TRUE, zoom = 5)
+```
 
+```{r}
+map <- ggmap(myMap) + geom_point(aes(x = long, y = lati, size = 1, color = From5500to4300BP$Blade.Ratio..Total.Blades.Total.Obsidian.), data = From5500to4300BP) + xlim(-100,-87) + ylim(14,20) + guides(fill=FALSE)
+map
+```
 
+```{r}
+newmap <- map + theme(legend.position="none")
+newmap
+```
+
+#4300-3500
+```{r}
+f <- curl("https://raw.githubusercontent.com/andym5780/Wave-of-Advance-Model-for-Predicting-the-Spread-of-Prismatic-Blade/master/Dates-Divided/4300-3500%20BP.csv")
+From4300to3500BP <- read.csv(f, header = TRUE)
+head(From4300to3500BP)
+```
+
+```{r}
+long <- From4300to3500BP$Longitude..DD.
+lati <- From4300to3500BP$Latitude..DD.
+```
+
+```{r}
+myMap <- get_map(location = c(lon = -93.5,lat = 17), source = "google", maptype = "terrain", color = "bw", crop=TRUE, zoom = 5)
+```
+
+```{r}
+map <- ggmap(myMap) + geom_point(aes(x = long, y = lati, size = 1, color = From4300to3500BP$Blade.Ratio..Total.Blades.Total.Obsidian.), data = From4300to3500BP) + xlim(-100,-87) + ylim(14,20) + guides(fill=FALSE)
+map
+```
+
+```{r}
+newmap <- map + theme(legend.position="none")
+newmap
+```
+#3500-2900
+```{r}
+f <- curl("https://raw.githubusercontent.com/andym5780/Wave-of-Advance-Model-for-Predicting-the-Spread-of-Prismatic-Blade/master/Dates-Divided/3500-2900%20BP.csv")
+From3500to2900BP <- read.csv(f, header = TRUE)
+head(From3500to2900BP)
+```
+```{r}
+From3500to2900BP
+```
+
+```{r}
+long <- From3500to2900BP$Longitude..DD.
+lati <- From3500to2900BP$Latitude..DD.
+```
+
+```{r}
+myMap <- get_map(location = c(lon = -93.5,lat = 17), source = "google", maptype = "terrain", color = "bw", crop=TRUE, zoom = 5)
+```
+
+```{r}
+map <- ggmap(myMap) + geom_point(aes(x = long, y = lati, size = 1, color = From3500to2900BP$Blade.Ratio..Total.Blades.Total.Obsidian.), data = From3500to2900BP) + xlim(-100,-87) + ylim(14,20) + guides(fill=FALSE)
+map
+```
+
+```{r}
+newmap <- map + theme(legend.position="none")
+newmap
+```
+
+#2900-2200
+```{r}
+f <- curl("https://raw.githubusercontent.com/andym5780/Wave-of-Advance-Model-for-Predicting-the-Spread-of-Prismatic-Blade/master/Dates-Divided/2900-2200%20BP.csv")
+From2900to2200BP <- read.csv(f, header = TRUE)
+head(From2900to2200BP)
+```
+
+```{r}
+long <- From2900to2200BP$Longitude..DD.
+lati <- From2900to2200BP$Latitude..DD.
+```
+
+```{r}
+myMap <- get_map(location = c(lon = -93.5,lat = 17), source = "google", maptype = "terrain", color = "bw", crop=TRUE, zoom = 5)
+```
+
+```{r}
+map <- ggmap(myMap) + geom_point(aes(x = long, y = lati, size = 1, color = From2900to2200BP$Blade.Ratio..Total.Blades.Total.Obsidian.), data = From2900to2200BP) + xlim(-100,-87) + ylim(14,20) + guides(fill=FALSE)
+map
+```
+
+```{r}
+newmap <- map + theme(legend.position="none")
+newmap
+```
+
+#2200-1300
+```{r}
+f <- curl("https://raw.githubusercontent.com/andym5780/Wave-of-Advance-Model-for-Predicting-the-Spread-of-Prismatic-Blade/master/Dates-Divided/2200-1300%20BP.csv")
+From2200to1300BP <- read.csv(f, header = TRUE)
+head(From2200to1300BP)
+```
+
+```{r}
+long <- From2200to1300BP$Longitude..DD.
+lati <- From2200to1300BP$Latitude..DD.
+```
+
+```{r}
+myMap <- get_map(location = c(lon = -93.5,lat = 17), source = "google", maptype = "terrain", color = "bw", crop=TRUE, zoom = 5)
+```
+
+```{r}
+map <- ggmap(myMap) + geom_point(aes(x = long, y = lati, size = 1, color = From2200to1300BP$Blade.Ratio..Total.Blades.Total.Obsidian.), data = From2200to1300BP) + xlim(-100,-87) + ylim(14,20) + guides(fill=FALSE)
+map
+```
+
+```{r}
+newmap <- map + theme(legend.position="none")
+newmap
+```
+#1300-460
+```{r}
+f <- curl("https://raw.githubusercontent.com/andym5780/Wave-of-Advance-Model-for-Predicting-the-Spread-of-Prismatic-Blade/master/Dates-Divided/1300-460%20BP.csv")
+From1300to460BP <- read.csv(f, header = TRUE)
+head(From1300to460BP)
+```
+
+```{r}
+long <- From1300to460BP$Longitude..DD.
+lati <- From1300to460BP$Latitude..DD.
+```
+
+```{r}
+myMap <- get_map(location = c(lon = -93.5,lat = 17), source = "google", maptype = "terrain", color = "bw", crop=TRUE, zoom = 5)
+```
+
+```{r}
+map <- ggmap(myMap) + geom_point(aes(x = long, y = lati, size = 1, color = From1300to460BP$Blade.Ratio..Total.Blades.Total.Obsidian.), data = From1300to460BP) + xlim(-100,-87) + ylim(14,20) + guides(fill=FALSE)
+map
+```
+
+```{r}
+newmap <- map + theme(legend.position="none")
+newmap
+```
 
 
 
